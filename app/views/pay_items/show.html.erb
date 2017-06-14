@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @pay_item.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pay_item.name %>
+</p>
+
+<p>
+  <strong>Dtls:</strong>
+  <% @pay_item.pay_item_details.each do |dtl| %>
+  <%= dtl.key %>
+  <%= dtl.value %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_pay_item_path(@pay_item) %> |
+<%= link_to 'Back', pay_items_path %>

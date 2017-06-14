@@ -1,0 +1,41 @@
+<%= form_with(model: pay_item, local: true) do |form| %>
+  <% if pay_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pay_item.errors.count, "error") %> prohibited this pay_item from being saved:</h2>
+
+      <ul>
+      <% pay_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.hidden_field :id, id: :pay_item_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code, id: :pay_item_code ,disabled: mode=='edit'%>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :pay_item_name %>
+  </div>
+
+  <div class="dtl_field">
+    <%= form.fields_for :pay_item_details do |dtl| %>
+       <%= dtl.label :key %><br/>
+       <%= dtl.text_field :key %><br/>
+       <%= dtl.label :value %><br/>
+       <%= dtl.text_field :value %><br/>
+    <% end %>
+    <button id="add-dtl" type="button">明細追加</button>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
