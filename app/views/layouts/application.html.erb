@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <% if @zaim_user %>
+      <%= @zaim_user['name'] %>
+      <%= link_to 'logout','/logout'%>
+    <% end %>
+
+    <%= link_to 'login','/login'%>
+
+
     <%= yield %>
   </body>
 </html>

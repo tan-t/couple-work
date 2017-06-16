@@ -1,0 +1,13 @@
+defaults: &defaults
+
+development:
+  <<： *defaults
+  zaim:
+    consumer_key: 42e3c1a01000915a47bd566f79cdf5bacc69b4b9
+    consumer_secret: 859eb6d3b0e73d6a6ee1078292608b7220c18bff
+
+test:
+  <<： *defaults
+
+production:
+  <<： *defaults
