@@ -1,0 +1,18 @@
+<div class="panel panel-info" id="messge-panel">
+  <div class="panel-heading">
+    <h3 class="panel-title">あなた宛のメッセージ</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <% @messages.each do |message| %>
+      <li class="list-group-item"><%= message.message %></li>
+      <% end %>
+  </ul>
+  </div>
+</div>
+
+<ul class="nav nav-pills nav-stacked">
+  <li role="presentation" class="active"><%= link_to 'ポータル','/portal/index' %></li>
+  <li role="presentation"><%= link_to '会計期間マスタメンテナンス','/account_term_msts/' %></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>

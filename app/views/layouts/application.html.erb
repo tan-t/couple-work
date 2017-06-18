@@ -9,14 +9,22 @@
   </head>
 
   <body>
-    <% if @zaim_user %>
-      <%= @zaim_user['name'] %>
-      <%= link_to 'logout','/logout'%>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/portal/index">CoupleWork</a>
+    <% if @user %>
+      <p class="navbar-text navbar-right">
+        Signed in as <%= @user['name'] %>
+        <%= link_to 'logout','/logout'%>
+      </p>
+      <% else %>
+      <p class="navbar-text">
+        <%= link_to 'login','/login'%>
+        </p>
     <% end %>
-
-    <%= link_to 'login','/login'%>
-
-
+    </div>
+  </nav>
+  
     <%= yield %>
   </body>
 </html>

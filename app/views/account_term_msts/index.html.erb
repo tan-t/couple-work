@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>会計期間マスタ - 一覧画面 -</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>年度</th>
+      <th>月度</th>
+      <th>開始日付</th>
+      <th>終了日付</th>
+      <th>〆</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @account_term_msts.each do |account_term_mst| %>
+      <tr>
+        <td><%= account_term_mst.year %></td>
+        <td><%= account_term_mst.month %></td>
+        <td><%= account_term_mst.start_date %></td>
+        <td><%= account_term_mst.end_date %></td>
+        <td><%= account_term_mst.closed %></td>
+        <td><%= link_to 'Show', account_term_mst %></td>
+        <td><%= link_to 'Edit', edit_account_term_mst_path(account_term_mst) %></td>
+        <td><% if ENV["RAILS_ENV"] == 'development' %>
+          <%= link_to 'Destroy', account_term_mst, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規登録', new_account_term_mst_path %>

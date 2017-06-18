@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @account_term_mst.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @account_term_mst.month %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @account_term_mst.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @account_term_mst.end_date %>
+</p>
+
+<p>
+  <strong>Closed:</strong>
+  <%= @account_term_mst.closed %>
+</p>
+
+<%= link_to 'Edit', edit_account_term_mst_path(@account_term_mst) %> |
+<%= link_to 'Back', account_term_msts_path %>

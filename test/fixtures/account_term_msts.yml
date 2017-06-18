@@ -1,11 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  _id: 1
-  key: MyString
-  value: MyString
-
-two:
-  _id: 2
-  key: MyString
-  value: MyString
+  year: 2017
+  month: 9
+  start_date: 2017-09-01
+  end_date: 2017-09-30
+  closed: false

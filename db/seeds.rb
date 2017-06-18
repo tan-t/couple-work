@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+AccountTermMst.create(year:2017,month:6,start_date:Date.new(2017,6,1),end_date:Date.new(2017,6,30))

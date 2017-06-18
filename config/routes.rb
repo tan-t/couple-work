@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  resources :account_term_msts
   root 'home#index'
-  get "home/index"
+  
+  get 'portal/index'
+
+
+  get 'home/categories' => "home#log_all_category"
+  get 'home/genres' => "home#log_all_genre"
 
   resources :pay_items
 

@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611094440) do
+ActiveRecord::Schema.define(version: 20170618111757) do
+
+  create_table "account_term_msts", force: :cascade do |t|
+    t.integer "year"
+    t.integer "month"
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "closed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "message"
+    t.integer "user_id"
+    t.integer "security"
+    t.string "link"
+    t.string "service"
+    t.integer "service_id"
+    t.boolean "already_read"
+    t.boolean "delete_flg"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "target_user"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
 
   create_table "pay_item_details", force: :cascade do |t|
     t.integer "_id"
@@ -24,6 +49,14 @@ ActiveRecord::Schema.define(version: 20170611094440) do
   create_table "pay_items", force: :cascade do |t|
     t.integer "_id"
     t.string "code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.integer "_id"
+    t.integer "zaim_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

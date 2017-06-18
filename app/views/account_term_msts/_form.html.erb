@@ -1,0 +1,42 @@
+<%= form_with(model: account_term_mst, local: true) do |form| %>
+  <% if account_term_mst.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account_term_mst.errors.count, "error") %> prohibited this account_term_mst from being saved:</h2>
+
+      <ul>
+      <% account_term_mst.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year, id: :account_term_mst_year%>
+  </div>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.number_field :month, id: :account_term_mst_month%>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, id: :account_term_mst_start_date%>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date, id: :account_term_mst_end_date%>
+  </div>
+
+  <div class="field">
+    <%= form.label :closed %>
+    <%= form.check_box :closed, id: :account_term_mst_closed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
